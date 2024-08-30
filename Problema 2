@@ -4,31 +4,19 @@ ultimo = 0
 lista = [0]
 
 try:
-    # Pede por um número e converte vírgula se necessário
     valor = float(input("Qual número deseja saber? ").replace(",","."))
-    
-    # Se número for negativo
     if valor < 0:
         print("Escolha um número maior ou igual a 0")
-        
-    # Se número for positivo    
     elif valor > -1:
-        
-        # Looping para encontrar valores
         while ultimo < valor:
             ultimo = a + b
             a = b
             b = ultimo
-            
-            # Adiciona à lista
             lista.append(ultimo)
-            
-        # Verifica se input está na lista e printa resposta
         if valor in lista:
             print(f"{f'{valor}'.rstrip('0').rstrip('.')} faz parte da sequência Fibonacci")
         else:
             print(f"{f'{valor}'.rstrip('0').rstrip('.')}  não faz parte da sequência Fibonacci")
 
-# Se input não for númerico
 except ValueError:
     print("Informe o número com dígitos")
